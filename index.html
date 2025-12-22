@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relli Tejaswi Niharika – UI/UX Designer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1115;
+      --card:#0f1720;
+      --muted:#b7c0cc;  
+      --glass: rgba(255,255,255,0.06);
+      --accent1: linear-gradient(135deg,#8a5ef7 0%,#5ad0f4 100%);
+      --accent2: linear-gradient(135deg,#ff7ab6 0%,#7a6cff 100%);
+      --accent3: #7a6cff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient( circle at 10% 10%, rgba(90,208,244,0.05), transparent 8%),
+                  radial-gradient( circle at 90% 90%, rgba(138,94,247,0.05), transparent 10%),
+                  var(--bg);
+      color:#e8eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:inherit}
+
+    /* NAV */
+    nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:92%;max-width:1200px;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:14px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.04);z-index:40}
+    .logo{display:flex;gap:12px;align-items:center;font-weight:700}
+    .logo .mark{width:36px;height:36px;border-radius:10px;background:var(--accent1);box-shadow:0 6px 18px rgba(90,208,244,0.08);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+    nav ul{display:flex;gap:22px;align-items:center;margin:0;padding:0;list-style:none}
+    nav li{font-weight:600;color:var(--muted);font-size:14px}
+    nav a:hover{color:#fff}
+
+    /* HERO */
+    .hero{min-height:72vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 40px}
+    .hero-inner{max-width:1100px;display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
+    .hero-title{font-size:40px;font-weight:800;margin:0;line-height:1.05;color:#f4f7fb}
+    .hero-sub{margin-top:16px;color:var(--muted);font-size:16px;max-width:680px}
+    .cta-row{margin-top:24px;display:flex;gap:12px;align-items:center}
+    .btn-primary{padding:12px 18px;border-radius:10px;border:none;background:var(--accent1);color:#04050a;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(138,94,247,0.12)}
+    .btn-ghost{padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer}
+
+    /* profile card */
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);height:100%}
+    .profile-photo{width:100%;height:320px;border-radius:12px;object-fit:cover;background:linear-gradient(135deg,#1f2430, #0b0f14)}
+    .profile-meta{margin-top:16px}
+    .meta-row{display:flex;justify-content:space-between;align-items:center}
+    .meta-name{font-weight:700}
+    .meta-sm{color:var(--muted);font-size:13px}
+
+    /* sections */
+    .container{max-width:1200px;margin:0 auto;padding:40px 20px}
+    .section-title{font-size:20px;color:#dfe8f8;margin-bottom:12px;font-weight:700}
+    .section-sub{color:var(--muted);margin-bottom:22px}
+
+    /* skills */
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skill-chip{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .skill-chip h4{margin:0 0 8px 0;font-size:14px}
+    .skill-chip ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);overflow:hidden}
+    .project img{width:100%;height:200px;object-fit:cover;border-radius:10px;cursor:pointer}
+    .project h3{margin:12px 0 8px 0;font-size:16px}
+    .project p{color:var(--muted);font-size:14px}
+    .project .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    /* contact */
+    .contact-card{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:20px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.04)}
+    .mail-btn{padding:12px 18px;border-radius:10px;background:var(--accent2);color:#fff;font-weight:700;text-decoration:none}
+
+    /* responsive */
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:1fr}
+      .profile-photo{height:260px}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .skill-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:640px){
+      nav{padding:10px;width:96%}
+      .hero{padding-top:100px}
+      .hero-title{font-size:28px}
+      .projects{grid-template-columns:1fr}
+      .skill-grid{grid-template-columns:1fr}
+      .profile-photo{height:200px}
+    }
+
+    .project:hover{transform:translateY(-6px);transition:transform .28s ease}
+    .btn-primary:active{transform:translateY(1px)}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="mark">RTN</div>
+    <div style="line-height:1">Relli Tejaswi Niharika<br><span style="font-weight:600;color:var(--muted);font-size:12px">Product & UI/UX Designer</span></div>
+  </div>
+  <ul>
+    <li><a href="#About">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Added id="About" here -->
+<section id="About" class="hero">
+  <div class="hero-inner container">
+    <div>
+      <h1 class="hero-title">Designing delightful product experiences — <span style="background:linear-gradient(90deg,#7a6cff,#5ad0f4);-webkit-background-clip:text;color:transparent">from concept to pixel</span></h1>
+      <p class="hero-sub">I'm <strong>Relli Tejaswi Niharika</strong>, a product-focused UI/UX designer crafting clear, accessible and delightful interfaces. I build design systems, high-fidelity prototypes in Figma, and product journeys that scale.</p>
+      <div class="cta-row">
+        <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Work</button>
+        <a class="btn-ghost" href="#contact">Contact</a>
+      </div>
+
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <div style="padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.03);font-size:13px">B.Tech – Computer Science, KL University (CGPA: 8.97)</div>
+        <div style="padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.03);font-size:13px">Designed 3 full case-studies • Mobile-first • Figma</div>
+      </div>
+    </div>
+
+    <aside class="profile-card">
+      <img src="uiux profile area pic.png" alt="Niharika Photo" class="profile-photo" />
+      <div class="profile-meta">
+        <div class="meta-row"><div>
+          <div class="meta-name">Relli Tejaswi Niharika</div>
+          <div class="meta-sm">UI/UX & Product Designer • Hyderabad, India</div>
+        </div>
+        <div style="text-align:right">
+          <div class="meta-sm">Email</div>
+          <div style="font-weight:700">niharikarellit@gmail.com</div>
+        </div></div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:14px">Interests: Product Design · UI Animation · Visual Systems · Minimal Aesthetics · Branding</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="container">
+  <section id="skills">
+    <div class="section-title">Skills & Tools</div>
+    <div class="section-sub">Design expertise, software & strengths used across projects</div>
+    <div class="skill-grid">
+      <div class="skill-chip">
+        <h4>Design</h4>
+        <ul>
+          <li>High-Fidelity UI & Prototyping</li>
+          <li>Wireframing & User Flows</li>
+          <li>Design Systems & Components</li>
+        </ul>
+      </div>
+      <div class="skill-chip">
+        <h4>Tools</h4>
+        <ul>
+          <li>Figma</li>
+          <li>Canva</li>
+        </ul>
+      </div>
+      <div class="skill-chip">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Visual Hierarchy • Spacing • Typography</li>
+          <li>Mobile-first • Accessibility-minded</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="margin-top:34px">
+    <div style="display:flex;justify-content:space-between;align-items:end"><div>
+      <div class="section-title">Selected Projects</div>
+      <div class="section-sub">Each case study includes problem → approach → outcome.</div>
+    </div></div>
+
+    <div class="projects" style="margin-top:18px">
+
+      <div class="project">
+        <img src="dishdelight.jpg" alt="DishDelight screenshot" />
+        <h3>DishDelight — Mobile Recipe App</h3>
+        <p><strong>Problem:</strong> Beginners face confusing recipes and poor search. <br>
+           <strong>Approach:</strong> Ingredient-first search, step-by-step cooking UI, favorites & scalable components. <br>
+           <strong>Outcome:</strong> Improved task completion time by 30% and stronger component scalability.</p>
+        <div class="tags"><span class="tag">Figma</span><span class="tag">Mobile UI</span><span class="tag">Design System</span></div>
+      </div>
+
+      <div class="project">
+        <img src="reso.jpg" alt="RESO website" />
+        <h3>RESO — Luxury Restaurant Website</h3>
+        <p><strong>Problem:</strong> Cluttered restaurant sites that harm conversions. <br>
+           <strong>Approach:</strong> Hero-first layout, curated menu sections, high-contrast visual hierarchy. <br>
+           <strong>Outcome:</strong> Cleaner UI, improved readability and user trust.</p>
+        <div class="tags"><span class="tag">Web UI</span><span class="tag">Branding</span><span class="tag">High-Fidelity</span></div>
+      </div>
+
+      <div class="project">
+        <img src="profile.jpg" alt="Profile app" />
+        <h3>Profile App — Onboarding & Profile Flow</h3>
+        <p><strong>Problem:</strong> High onboarding drop-offs. <br>
+           <strong>Approach:</strong> Minimal progressive onboarding, delightful micro-interactions, gradient visuals. <br>
+           <strong>Outcome:</strong> Reduced onboarding drop-off by 25%.</p>
+        <div class="tags"><span class="tag">Onboarding</span><span class="tag">Micro-interactions</span><span class="tag">Figma</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" style="margin-top:40px">
+    <div class="section-title">Contact</div>
+    <div class="section-sub">I'm open to internships, freelance and junior product roles — let's build something great.</div>
+
+    <div class="contact-card">
+      <div>
+        <div style="font-weight:700">Email</div>
+        <div style="color:var(--muted)">niharikarellit@gmail.com</div>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="mail-btn" href="mailto:niharikarellit@gmail.com">
+          Contact through mail
+        </a>
+
+        <!-- Resume Button -->
+        <a class="mail-btn" href="RelliTejaswiNiharikaResumeuiux1.pdf" download 
+           style="background: var(--accent3);">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FULL IMAGE VIEW LIGHTBOX -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); backdrop-filter:blur(6px); justify-content:center; align-items:center; z-index:9999; padding:20px;">
+  <img id="lightbox-img" src="" style="max-width:100%; max-height:100%; border-radius:12px; object-fit:contain;" />
+</div>
+
+<script>
+// Lightbox functionality
+window.addEventListener('DOMContentLoaded', () => {
+  const imgs = document.querySelectorAll('.project img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+});
+</script>
+
+</body>
+</html>
